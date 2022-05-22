@@ -14,10 +14,10 @@
   ## Usage :
   ### This project will allow users to created "README.md" files for their projects. 
   ## Contributors:
-  ### undefined
+  ### Myself
   ## Tests:
   ### Run the following commands in your terminal to test this app:
-  ### Myself
+  ### Will be added in the future
   ## Questions:
   ### If you have any questions, you may contact me at either
   ### Github: https://github.com/lgarced
