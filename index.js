@@ -2,12 +2,13 @@ const fs = require('fs');
 const inquirer = require("inquirer");
 const path = require('path');
 const generateMarkdown = require('./generationMarkdown.js')
+const chalk = require("chalk")
 
 
 const questions = [
   {
     type: "input",
-    name: "tittle",
+    name: "title",
     message: "What is the tittle of your project?",
     validate: (titleInput) => {
       if (titleInput) {
@@ -61,15 +62,12 @@ const questions = [
   {
     type: "input",
     name: "askMe",
-    message:
-      "What is your Github username?",
+    message: "What is your Github username?",
     validate: (askMeInput) => {
       if (askMeInput) {
         return true;
       } else {
-        console.log(
-          "Please provide your username to be reach for questions"
-        );
+        console.log("Please provide your username to be reach for questions");
         return false;
       }
     },
@@ -90,8 +88,7 @@ const questions = [
   {
     type: "input",
     name: "email",
-    message:
-      "What is your email to be reached for questions?",
+    message: "What is your email to be reached for questions?",
     validate: (emailInput) => {
       if (emailInput) {
         return true;
@@ -103,11 +100,45 @@ const questions = [
   },
   {
     type: "input",
-    name:"document",
-    message: 
-    "What name do you want to give to your document(Read.ME)?"
-
-  }
+    name: "contributors",
+    message: "Who contribute to this project?",
+    validate: (contributorInput) => {
+      if (contributorInput) {
+        return true;
+      } else {
+        console.log(
+          "Please enter your name if no one else contributed to the project."
+        );
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "What commands should the user write to run the project?",
+    validate: (commandInput) => {
+      if (commandInput) {
+        return true;
+      } else {
+        console.log("Please provide a command for the user to run the project");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "document",
+    message: "What name do you want to give to your document(Example: README.md)?",
+    validate: (documentInput) => {
+      if (documentInput) {
+        return true;
+      } else {
+        console.log(chalk.green("Please provide an email for the proyect"));
+        return false;
+      }
+    },
+  },
 ];
 
 inquirer

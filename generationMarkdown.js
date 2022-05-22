@@ -69,7 +69,7 @@ function generateMarkdown(answer) {
   ## Installation:
   ### You must install the following for this app to function:
   ### ${answer.installation}
-  ## Usage:
+  ## Usage :
   ### ${answer.usage}
   ## Contributors:
   ### ${answer.contributions}
